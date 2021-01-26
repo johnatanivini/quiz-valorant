@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "next": "latest",
+    "next-images": "^1.7.0",
+    "next-react-svg": "^1.1.2",
     "next-seo": "^4.17.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",

@@ -2,7 +2,7 @@
   "bg": "https://images.hdqwalls.com/wallpapers/valorant-killjoy-animation-zt.jpg",
   "title": "Quiz Valorant",
   "description": "Teste os seus conhecimentos sobre o Universo do jogo FPS Valorant da Riot Games, ",
-  "logo":"",
+  "logo":"/svgs/valorant-logo.svg",
   "questions": [
     {
       "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",

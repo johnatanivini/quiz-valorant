@@ -3,6 +3,7 @@ import db from './../db.json'
 import QuizBackground from '../components/QuizComponents/QuizBackground'
 import Card from '../components/Card/Card'
 import Footer from '../components/Footer/Footer'
+import QuizLogo from '../components/QuizLogo/QuizLogo'
 
 
 
@@ -21,7 +22,7 @@ export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
         <QuizContainer>
-
+          <QuizLogo />
           <Card>
             <Card.Header>
               <h1>{db.title}</h1>
