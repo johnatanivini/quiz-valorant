@@ -5,7 +5,7 @@
   "logo":"/svgs/valorant-logo.svg",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+      "image": "https://media.giphy.com/media/MctuLwGj40HC6ATDoI/giphy.gif",
       "title": "Como fazer um seletor por id via CSS?",
       "description": "Essa é pra aquecer",
       "answer": 2,
@@ -17,7 +17,47 @@
       ]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "image": "https://media1.tenor.com/images/569034329c1247c3e01e0514247261ff/tenor.gif",
+      "title": "Como fazer um background gradiente com css?",
+      "description": "Faz tempo em haha",
+      "answer": 0,
+      "alternatives": [
+         "background: linear-gradient(#e66465, #9198e5);",
+         "background: gradient(#e66465, #9198e5);"
+      ]
+    },
+    {
+      "image": "https://static.wixstatic.com/media/2d0812_af2c6d6134c84bbbb177437bb96315ed~mv2.gif/v1/fit/w_480%2Ch_270%2Cal_c%2Cq_80/file.jpg",
+      "title": "Como fazer um background gradiente com css?",
+      "description": "Faz tempo em haha",
+      "answer": 0,
+      "alternatives": [
+         "background: linear-gradient(#e66465, #9198e5);",
+         "background: gradient(#e66465, #9198e5);"
+      ]
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjtngtv237WmPRdATrO1ljhpwdIpFZaGRO3Q&usqp=CAU",
+      "title": "Como fazer um background gradiente com css?",
+      "description": "Faz tempo em haha",
+      "answer": 0,
+      "alternatives": [
+         "background: linear-gradient(#e66465, #9198e5);",
+         "background: gradient(#e66465, #9198e5);"
+      ]
+    },
+    {
+      "image": "https://steamuserimages-a.akamaihd.net/ugc/1464185161000055061/745302C2D015802A7947BAF630B6DCF30B08AE31/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+      "title": "Como fazer um background gradiente com css?",
+      "description": "Faz tempo em haha",
+      "answer": 0,
+      "alternatives": [
+         "background: linear-gradient(#e66465, #9198e5);",
+         "background: gradient(#e66465, #9198e5);"
+      ]
+    },
+    {
+      "image": "https://steamuserimages-a.akamaihd.net/ugc/1482199559506861522/A6028E39EE1BB8A29817FD6A163ECD54462889A0/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
       "title": "Como fazer um background gradiente com css?",
       "description": "Faz tempo em haha",
       "answer": 0,
