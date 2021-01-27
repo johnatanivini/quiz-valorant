@@ -1,69 +1,126 @@
 {
   "bg": "https://images.hdqwalls.com/wallpapers/valorant-killjoy-animation-zt.jpg",
-  "title": "Quiz Valorant",
+  "title": "Você sabe tudo sobre valorant?",
   "description": "Teste os seus conhecimentos sobre o Universo do jogo FPS Valorant da Riot Games. Vamos lá Soldado! ",
   "logo":"/svgs/valorant-logo.svg",
   "questions": [
     {
       "image": "https://media.giphy.com/media/MctuLwGj40HC6ATDoI/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
+      "title": "Quanto dinheiro você ganha para plantar o Spike?",
       "description": "Essa é pra aquecer",
-      "answer": 2,
+      "answer": 1,
       "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
+        "500 créditos",
+        "300 créditos",
+        "200 créditos",
+        "Não recebe nada"
       ]
     },
     {
       "image": "https://media1.tenor.com/images/569034329c1247c3e01e0514247261ff/tenor.gif",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
+      "title": "Quanto dinheiro você ganha pela rodada que você ganha?",
+      "description": "E ai você sabe?",
       "answer": 0,
       "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
+        "3000 créditos",
+        "2000 créditos",
+        "1600 créditos",
+        "2500 créditos"
+      ]
+    },
+    {
+      "image": "https://media1.tenor.com/images/569034329c1247c3e01e0514247261ff/tenor.gif",
+      "title": "Quanto dinheiro você ganha por morte em Valorant?",
+      "description": "E ai você sabe?",
+      "answer": 2,
+      "alternatives": [
+        "500 créditos",
+        "100 créditos",
+        "200 créditos",
+        "300 créditos"
       ]
     },
     {
       "image": "https://static.wixstatic.com/media/2d0812_af2c6d6134c84bbbb177437bb96315ed~mv2.gif/v1/fit/w_480%2Ch_270%2Cal_c%2Cq_80/file.jpg",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
-      "answer": 0,
+      "title": "Qual o melhor modo de se mover, que aumenta a precisão da mira?",
+      "description": "Como você se move?",
+      "answer": 1,
       "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
+         "Correndo",
+         "Agachando",
+         "Andando",
+         "Bhop"
       ]
     },
     {
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjtngtv237WmPRdATrO1ljhpwdIpFZaGRO3Q&usqp=CAU",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
-      "answer": 0,
+      "title": "Qual pistola tem o maior dano por tiro na cabeça em 30 metros?",
+      "description": "Tá pistola agora? Relaxe.",
+      "answer": 3,
       "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
+         "Ghost",
+         "Frenzy",
+         "Shorty",
+         "Sheriff"
       ]
     },
     {
       "image": "https://steamuserimages-a.akamaihd.net/ugc/1464185161000055061/745302C2D015802A7947BAF630B6DCF30B08AE31/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
-      "answer": 0,
+      "title": "Qual pistola pode disparar em rajadas?",
+      "description": "Dedão é você?",
+      "answer": 1,
       "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
+         "Ghost",
+         "Frenzy",
+         "Shorty",
+         "Sheriff"
       ]
     },
     {
-      "image": "https://steamuserimages-a.akamaihd.net/ugc/1482199559506861522/A6028E39EE1BB8A29817FD6A163ECD54462889A0/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
-      "answer": 0,
+      "image": "https://ik.imagekit.io/hzvvrdrlw8t/07_attack_defend-1024x421_-g0S6f7cE.jpg",
+      "title": "De acordo com estatísticas globais do Valorant, qual lado tem maior porcentagem de vitórias?",
+      "description": "Gosta de defender ou atacar!",
+      "answer": 1,
       "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
+         "Atacantes",
+         "Defesores",
+         "Os dois lados"
+      ]
+    },
+    {
+      "image": "https://ik.imagekit.io/hzvvrdrlw8t/08_silencer-1024x421_OQjv6Qw65.jpg",
+      "title": "Qual desses rifles tem silenciador?",
+      "description": "Dá onde vem o tiro!",
+      "answer": 2,
+      "alternatives": [
+         "Bulldog",
+         "Guardian",
+         "Phantom",
+         "Vandal"
+      ]
+    },
+    {
+      "image": "https://ik.imagekit.io/hzvvrdrlw8t/08_silencer-1024x421_OQjv6Qw65.jpg",
+      "title": "Qual é o nome do atual torneio Riot?",
+      "description": "Vamos lá campeão!",
+      "answer": 2,
+      "alternatives": [
+         "Valorant Friday Night",
+         "Riot Big One",
+         "Valorant First Strike",
+         "Valorant World Rush"
+      ]
+    },
+    {
+      "image": "https://ik.imagekit.io/hzvvrdrlw8t/08_silencer-1024x421_OQjv6Qw65.jpg",
+      "title": "Qual desses agentes não tem habilidades SMOKE?",
+      "description": "Com quem você joga heim!",
+      "answer": 1,
+      "alternatives": [
+         "Jett",
+         "Sova",
+         "Viper",
+         "Omen"
       ]
     }
   ],
