@@ -6,6 +6,7 @@ import QuizBackground from '../components/QuizComponents/QuizBackground'
 import Card from '../components/Card/Card'
 import Footer from '../components/Footer/Footer'
 import QuizLogo from '../components/QuizLogo/QuizLogo'
+import GitHubCorner from '../components/GitHubCorner/GitHubCorner'
 
 const QuizContainer = styled.div`
   width: 100%;
@@ -95,6 +96,7 @@ export default function Home () {
 
         <Footer />
       </QuizContainer>
+      <GitHubCorner projectUrl='https://github.com/johnatanivini/quiz-valorant' />
     </QuizBackground>
   )
 }
