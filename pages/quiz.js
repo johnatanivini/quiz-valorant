@@ -5,6 +5,7 @@ import Card from '../components/Card/Card'
 import Footer from '../components/Footer/Footer'
 import QuizBackground from '../components/QuizComponents/QuizBackground'
 import QuizLogo from '../components/QuizLogo/QuizLogo'
+import ChevronLeft from '../svgs/chevron-left.svg'
 import db from './../db.json'
 
 const QuizContainer = styled.div`
@@ -53,7 +54,7 @@ export default function Quiz () {
         <QuizLogo />
         <Card>
           <Card.Header>
-            <h1>Pergunta 1 de 6 </h1>
+            <h1> <img src={ChevronLeft} /> Pergunta 1 de 6 </h1>
           </Card.Header>
           <Card.Content>
 
