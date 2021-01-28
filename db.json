@@ -1,11 +1,11 @@
 {
-  "bg": "https://images.hdqwalls.com/wallpapers/valorant-killjoy-animation-zt.jpg",
+  "bg": "https://ik.imagekit.io/hzvvrdrlw8t/valorant-killjoy-animation-zt_2JT_twLe7.jpg",
   "title": "Você sabe tudo sobre valorant?",
   "description": "Teste os seus conhecimentos sobre o Universo do jogo FPS Valorant da Riot Games. Vamos lá Soldado! ",
   "logo":"/svgs/valorant-logo.svg",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/MctuLwGj40HC6ATDoI/giphy.gif",
+      "image": "https://ik.imagekit.io/hzvvrdrlw8t/valorant-guide-spike-vignette_N2tvInoS1.jpg",
       "title": "Quanto dinheiro você ganha para plantar o Spike?",
       "description": "Essa é só pra aquecer o cano!",
       "answer": 1,
@@ -17,7 +17,7 @@
       ]
     },
     {
-      "image": "https://media1.tenor.com/images/569034329c1247c3e01e0514247261ff/tenor.gif",
+      "image": "https://ik.imagekit.io/hzvvrdrlw8t/tenor_YzIJ9RFnr.gif",
       "title": "Quanto dinheiro você ganha pela rodada que você ganha?",
       "description": "E ai você sabe?",
       "answer": 0,
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "image": "https://media1.tenor.com/images/569034329c1247c3e01e0514247261ff/tenor.gif",
+      "image": "https://ik.imagekit.io/hzvvrdrlw8t/download_KnqtapN44.jfif",
       "title": "Quanto dinheiro você ganha por morte em Valorant?",
       "description": "E ai você sabe?",
       "answer": 2,
@@ -41,7 +41,7 @@
       ]
     },
     {
-      "image": "https://static.wixstatic.com/media/2d0812_af2c6d6134c84bbbb177437bb96315ed~mv2.gif/v1/fit/w_480%2Ch_270%2Cal_c%2Cq_80/file.jpg",
+      "image": "https://ik.imagekit.io/hzvvrdrlw8t/file_YBUgz8xUz.gif",
       "title": "Qual o melhor modo de se mover, que aumenta a precisão da mira?",
       "description": "Como você se move?",
       "answer": 1,
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjtngtv237WmPRdATrO1ljhpwdIpFZaGRO3Q&usqp=CAU",
+      "image": "https://ik.imagekit.io/hzvvrdrlw8t/images_I8uZ9ovk4.jfif",
       "title": "Qual pistola tem o maior dano por tiro na cabeça em 30 metros?",
       "description": "Tá pistola agora? Relaxe.",
       "answer": 3,
@@ -65,7 +65,7 @@
       ]
     },
     {
-      "image": "https://steamuserimages-a.akamaihd.net/ugc/1464185161000055061/745302C2D015802A7947BAF630B6DCF30B08AE31/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+      "image": "https://ik.imagekit.io/hzvvrdrlw8t/download_RmgZoVIVL.gif",
       "title": "Qual pistola pode disparar em rajadas?",
       "description": "Dedão é você?",
       "answer": 1,
