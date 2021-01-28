@@ -8,6 +8,7 @@ import Footer from '../components/Footer/Footer'
 import QuizLogo from '../components/QuizLogo/QuizLogo'
 import GitHubCorner from '../components/GitHubCorner/GitHubCorner'
 import Input from '../components/Input/Input'
+import Button from '../components/Button/Button'
 
 const QuizContainer = styled.div`
   width: 100%;
@@ -18,16 +19,6 @@ const QuizContainer = styled.div`
   form {
     display:flex;
     flex-flow: column nowrap
-  }
-
-  form button {
-
-    padding:10px;
-    border-radius:${({ theme }) => theme.borderRadius};
-    border:none;
-    color:${({ theme }) => theme.colors.contrastText};
-    margin-top:10px;
-    background:${({ theme }) => theme.colors.terciary};
   }
 
   @media screen and (max-width: 500px) {
@@ -58,8 +49,9 @@ export default function Home () {
               <Input
                 onChange={(infoEvento) => setName(infoEvento.target.value)}
                 placeholder='Qual o seu nome soldado?'
+                name={name}
               />
-              <button type='submit' disabled={name.length === 0}>{name.length === 0 ? 'JOGAR' : 'Let\'s GO ' + name}</button>
+              <Button disabled={name.length === 0}>{name.length === 0 ? 'JOGAR' : 'Let\'s GO ' + name}</Button>
             </form>
           </Card.Content>
         </Card>
