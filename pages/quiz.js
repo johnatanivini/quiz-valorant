@@ -1,5 +1,6 @@
 
 import React from 'react'
+import {useRouter} from 'next/router'
 import styled from 'styled-components'
 import Card from '../components/Card/Card'
 import QuizBackground from '../components/QuizComponents/QuizBackground'
@@ -24,6 +25,7 @@ const QuestionsWrap = styled.div`
 `
 
 function Resultado ({ totalAcertos, totalQuestions }) {
+  const router = useRouter()
   return (
     <Card>
       <Card.Header>
@@ -33,7 +35,7 @@ function Resultado ({ totalAcertos, totalQuestions }) {
       </Card.Header>
       <Card.Content>
         <br />
-        <p>{`Você acertou ${totalAcertos} de ${totalQuestions}`}</p>
+        <p>{`Boa Soldado  ${router.query.nome}, você acertou ${totalAcertos} de ${totalQuestions}`}</p>
         <br />
         <a href='/' style={{ color: '#fff', marginTop: '10px', display: 'block' }}>{'<'} Voltar </a>
       </Card.Content>
