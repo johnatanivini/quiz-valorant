@@ -7,6 +7,7 @@ import Card from '../components/Card/Card'
 import Footer from '../components/Footer/Footer'
 import QuizLogo from '../components/QuizLogo/QuizLogo'
 import GitHubCorner from '../components/GitHubCorner/GitHubCorner'
+import Input from '../components/Input/Input'
 
 const QuizContainer = styled.div`
   width: 100%;
@@ -17,18 +18,6 @@ const QuizContainer = styled.div`
   form {
     display:flex;
     flex-flow: column nowrap
-  }
-
-  form input {
-    padding:10px;
-    border-radius:${({ theme }) => theme.borderRadius};
-    border:solid 1px ${({ theme }) => theme.colors.secondary};
-    color:${({ theme }) => theme.colors.terciary};
-    background:transparent
-  }
-
-  form input:focus{
-    outline:0
   }
 
   form button {
@@ -66,10 +55,9 @@ export default function Home () {
               router.push(`/quiz?nome=${name}`)
             }}
             >
-              <input
-                onChange={function (infoEvento) {
-                  setName(infoEvento.target.value)
-                }} placeholder='Qual o seu nome soldado?'
+              <Input
+                onChange={(infoEvento) => setName(infoEvento.target.value)}
+                placeholder='Qual o seu nome soldado?'
               />
               <button type='submit' disabled={name.length === 0}>{name.length === 0 ? 'JOGAR' : 'Let\'s GO ' + name}</button>
             </form>

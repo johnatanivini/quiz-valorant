@@ -11,7 +11,7 @@ import db from './../db.json'
 const QuizContainer = styled.div`
   width: 100%;
   max-width: 350px;
-  padding-top: 50px;
+  padding-top: 55px;
   margin: auto 10%;
 
   form {
