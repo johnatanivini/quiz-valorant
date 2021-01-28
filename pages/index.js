@@ -9,23 +9,7 @@ import QuizLogo from '../components/QuizLogo/QuizLogo'
 import GitHubCorner from '../components/GitHubCorner/GitHubCorner'
 import Input from '../components/Input/Input'
 import Button from '../components/Button/Button'
-
-const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 50px;
-  margin: auto 10%;
-
-  form {
-    display:flex;
-    flex-flow: column nowrap
-  }
-
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 20px;
-  }
-`
+import QuizContainer from '../components/QuizContainer/QuizContainer'
 
 export default function Home () {
   const router = useRouter()
@@ -41,7 +25,8 @@ export default function Home () {
           </Card.Header>
           <Card.Content>
             <p>{db.description}</p>
-            <form onSubmit={function (evento) {
+
+            <form onSubmit={(evento) => {
               evento.preventDefault()
               router.push(`/quiz?nome=${name}`)
             }}
@@ -51,7 +36,7 @@ export default function Home () {
                 placeholder='Qual o seu nome soldado?'
                 name={name}
               />
-              <Button disabled={name.length === 0}>{name.length === 0 ? 'JOGAR' : 'Let\'s GO ' + name}</Button>
+              <Button disabled={name.length === 0} name={name} />
             </form>
           </Card.Content>
         </Card>

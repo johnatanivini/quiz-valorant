@@ -7,45 +7,7 @@ import QuizBackground from '../components/QuizComponents/QuizBackground'
 import QuizLogo from '../components/QuizLogo/QuizLogo'
 import ChevronLeft from '../svgs/chevron-left.svg'
 import db from './../db.json'
-
-const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 55px;
-  margin: auto 10%;
-
-  form {
-    display:flex;
-    flex-flow: column nowrap
-  }
-
-  form input[type="text"] {
-    padding:10px;
-    border-radius:${({ theme }) => theme.borderRadius};
-    border:solid 1px ${({ theme }) => theme.colors.secondary};
-    color:${({ theme }) => theme.colors.terciary};
-    background:transparent
-  }
-
-  form input:focus{
-    outline:0
-  }
-
-  form button {
-    padding:10px;
-    border-radius:${({ theme }) => theme.borderRadius};
-    border:none;
-    color:${({ theme }) => theme.colors.contrastText};
-    margin-top:10px;
-    background:${({ theme }) => theme.colors.terciary};
-  }
-
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 20px;
-  }
-
-`
+import QuizContainer from '../components/QuizContainer/QuizContainer'
 
 export default function Quiz () {
   return (
