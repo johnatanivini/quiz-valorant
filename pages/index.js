@@ -34,7 +34,8 @@ export default function Home () {
               <Input
                 onChange={(infoEvento) => setName(infoEvento.target.value)}
                 placeholder='Qual o seu nome soldado?'
-                name={name}
+                name='name'
+                value={name}
               />
               <Button disabled={name.length === 0} name={name} />
             </form>
