@@ -53,30 +53,40 @@ Card.ListaQuizesWrap = styled.ul`
     display:flex;
     flex-flow: column nowrap;
 
-    li {
+    li,
+    label {
         flex:1;
         list-style:none;
         background-color: #00000070;
         color:${({ theme }) => theme.colors.contrastText};
         margin-bottom:5px;
         border-radius: ${({ theme }) => theme.borderRadius};
-        transition:all linear .2s
+        transition:all linear .2s;
+        position:relative;
+        overflow:hidden;
+        padding:10px;
     }
 
-    li:hover {
+    li:hover,
+    label:hover {
         background-color:${({ theme }) => theme.colors.terciary};
     }
 
-    li  a {
+    li a {
         color:${({ theme }) => theme.colors.contrastText};
         text-decoration:none;
-        display:block;
-        padding:10px;
-        font-size:0.8em
-        
-        
     }
 
+    label:focus-within {
+        background-color: ${({ theme }) => theme.colors.secondary} !important;
+    }
+
+    label input{
+        position:absolute;
+        top:0;
+        left:0;
+        left: -30px
+    }
 
 `
 

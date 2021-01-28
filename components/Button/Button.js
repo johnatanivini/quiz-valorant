@@ -17,11 +17,11 @@ const ButtonBase = styled.button`
 
 `
 
-export default function Button ({ name, ...props }) {
+export default function Button ({ name, text, ...props }) {
   return (
     <>
       <ButtonBase {...props}>
-        {name.length === 0 ? 'JOGAR' : 'Let\'s GO ' + name}
+        {text}
       </ButtonBase>
     </>
   )
@@ -29,5 +29,6 @@ export default function Button ({ name, ...props }) {
 
 Button.protoTypes = {
   type: propTypes.oneOf(['submit', 'type', 'button']).isRequired,
-  children: propTypes.node.isRequired
+  children: propTypes.node.isRequired,
+  text: propTypes.string.isRequired
 }

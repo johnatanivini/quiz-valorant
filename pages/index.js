@@ -37,7 +37,7 @@ export default function Home () {
                 name='name'
                 value={name}
               />
-              <Button disabled={name.length === 0} name={name} />
+              <Button disabled={name.length === 0} text={name.length === 0 ? 'JOGAR' : 'Let\'s GO ' + name} />
             </form>
           </Card.Content>
         </Card>
