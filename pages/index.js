@@ -1,6 +1,5 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import styled from 'styled-components'
 import db from './../db.json'
 import QuizBackground from '../components/QuizComponents/QuizBackground'
 import Card from '../components/Card/Card'

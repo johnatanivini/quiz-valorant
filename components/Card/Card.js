@@ -65,27 +65,48 @@ Card.ListaQuizesWrap = styled.ul`
         position:relative;
         overflow:hidden;
         padding:10px;
+        border: solid 1px transparent;
+
+        &[data-selected="true"] {
+
+            background-color: ${({ theme }) => theme.colors.primary};
+            
+            &[data-status="correta"] {
+                background-color: ${({ theme }) => theme.colors.success};
+            }
+            &[data-status="errada"] {
+                background-color: ${({ theme }) => theme.colors.wrong};
+            }
+          }
+
+        &:hover{
+            background-color:${({ theme }) => theme.colors.terciary};
+        }
+
+        &:focus,
+        &:focus-within {
+            background-color: ${({ theme }) => theme.colors.primary} !important;
+            box-shadow: 0px 0px 13px #fff, 0px 2px 7px #f770bd, 1px -2px 10px red;
+            border: solid 1px ${({ theme }) => theme.colors.contrastText + '70'};
+        }
+
+        input {
+            position:absolute;
+            top:0;
+            left:0;
+            left: -30px
+        }
+
+        a {
+            color:${({ theme }) => theme.colors.contrastText};
+            text-decoration:none;
+        }
     }
 
-    li:hover,
-    label:hover {
-        background-color:${({ theme }) => theme.colors.terciary};
-    }
-
-    li a {
-        color:${({ theme }) => theme.colors.contrastText};
-        text-decoration:none;
-    }
-
-    label:focus-within {
-        background-color: ${({ theme }) => theme.colors.secondary} !important;
-    }
-
-    label input{
-        position:absolute;
-        top:0;
-        left:0;
-        left: -30px
+    button {
+        flex:1;
+        width:100%;
+        magin:10px 0;
     }
 
 `

@@ -135,7 +135,7 @@
       "mainBg": "#364966",
       "contrastText": "#FFFFFF",
       "wrong": "#dc3d4b",
-      "success": "#042e27",
+      "success": "#4CAF50",
       "buttonDisabled":"gray"
     },
     "borderRadius": "4px"
