@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import Logo from '../../svgs/valorant-logo.svg'
 import { useRouter } from 'next/router'
+import db from '../../db.json'
 
 const QuizLogoWrapper = styled.div`
   img {
@@ -25,7 +25,7 @@ export default function QuizLogo (props) {
   return (
     <QuizLogoWrapper {...props}>
       <a onClick={toHome}>
-        <img src={Logo} height='50' />
+        <img src={db.logo} height='50' />
       </a>
     </QuizLogoWrapper>
   )
