@@ -5,19 +5,16 @@ import styled from 'styled-components'
 import Card from '../components/Card/Card'
 import QuizBackground from '../components/QuizComponents/QuizBackground'
 import QuizLogo from '../components/QuizLogo/QuizLogo'
-import ChevronLeft, { indexOf } from '../svgs/chevron-left.svg'
+import ChevronLeft from '../svgs/chevron-left.svg'
 import db from './../db.json'
 import QuizContainer from '../components/QuizContainer/QuizContainer'
 import Button from '../components/Button/Button'
 import CorrectImage from '../components/ResultQuestion/QuestionCorrect'
 import IncorrectImage from '../components/ResultQuestion/QuestionIncorrect'
-import QuestionCorrect from '../components/ResultQuestion/QuestionCorrect'
-import QuestionIncorrect from '../components/ResultQuestion/QuestionIncorrect'
 
 const QuestionsWrap = styled.div`
   display:flex;
   flex-flow: column nowrap;
-
   button{
     outiline: none;
     flex:1
@@ -54,7 +51,9 @@ function Resultado ({ results }) {
         <p> {`você acertou ${results.filter((result) => result === true).reduce((a, b) => a + b, 0)} de ${results.length} questões`}</p>
         <div style={{ display: 'flex', flexFlow: 'row wrap', justifyContent: 'center', alignItems: 'center', marginTop: '10px' }}>
           {results.map((result, index) => {
-            const questao = index + 1
+            const questaoIndex = index + 1
+            const questao = db.questions[index]
+            const alternativa = questao ? questao.alternatives[questao.answer] : []
             return (
               <div
                 key={index}
@@ -69,8 +68,9 @@ function Resultado ({ results }) {
                   alignItems: 'center',
                   flex: 1,
                   margin: '2px',
-                  flexBasis: '100px',
-                  textAlign: 'center'
+                  flexBasis: '100%',
+                  textAlign: 'center',
+                  justifyContent: 'space-between'
                 }}
               >
                 <span style={{
@@ -78,9 +78,16 @@ function Resultado ({ results }) {
                   padding: '10px',
                   flexBasis: '50px',
                   marginRight: '20px'
+                 
                 }}
-                >{`#${questao}`}
-                </span> {result === true ? <QuestionCorrect /> : <QuestionIncorrect />}
+                >{`#${questaoIndex}`}
+                </span>
+                <span>
+                  {`Resposta Correta:`}
+                  <br/>
+                  <span style={{color:db.theme.colors.primary}}>{alternativa}</span>
+                </span>
+                {result === true ? <CorrectImage /> : <IncorrectImage />}
               </div>
             )
           })}
@@ -116,14 +123,31 @@ function LoadingQuiz () {
           Carregando cenário...
         </h1>
       </Card.Header>
-      <img
-        src='https://ik.imagekit.io/hzvvrdrlw8t/image_processing20200619-13778-188wbpk_QadXw34vJ.gif'
-        style={{
-          width: '100%',
-          height: '250px;',
-          objectFit: 'cover'
-        }}
-      />
+      <svg xmlns="http://www.w3.org/2000/svg" style={{margin: 'auto',background: 'none', display: 'block', shapeRendering: 'auto'}} width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+    <g>
+        <circle cx="60" cy="50" r="4" fill="#d82fe4">
+            <animate attributeName="cx" repeatCount="indefinite" dur="1s" values="95;35" keyTimes="0;1" begin="-0.67s"></animate>
+            <animate attributeName="fill-opacity" repeatCount="indefinite" dur="1s" values="0;1;1" keyTimes="0;0.2;1" begin="-0.67s"></animate>
+        </circle>
+        <circle cx="60" cy="50" r="4" fill="#d82fe4">
+            <animate attributeName="cx" repeatCount="indefinite" dur="1s" values="95;35" keyTimes="0;1" begin="-0.33s"></animate>
+            <animate attributeName="fill-opacity" repeatCount="indefinite" dur="1s" values="0;1;1" keyTimes="0;0.2;1" begin="-0.33s"></animate>
+        </circle>
+        <circle cx="60" cy="50" r="4" fill="#d82fe4">
+            <animate attributeName="cx" repeatCount="indefinite" dur="1s" values="95;35" keyTimes="0;1" begin="0s"></animate>
+            <animate attributeName="fill-opacity" repeatCount="indefinite" dur="1s" values="0;1;1" keyTimes="0;0.2;1" begin="0s"></animate>
+        </circle>
+    </g>
+    <g transform="translate(-15 0)">
+        <path d="M50 50L20 50A30 30 0 0 0 80 50Z" fill="#f95c5c" transform="rotate(90 50 50)"></path>
+        <path d="M50 50L20 50A30 30 0 0 0 80 50Z" fill="#f95c5c">
+            <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;45 50 50;0 50 50" keyTimes="0;0.5;1"></animateTransform>
+        </path>
+        <path d="M50 50L20 50A30 30 0 0 1 80 50Z" fill="#f95c5c">
+            <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;-45 50 50;0 50 50" keyTimes="0;0.5;1"></animateTransform>
+        </path>
+    </g>
+</svg>
     </Card>
   )
 }
