@@ -205,13 +205,14 @@ function QuestionWidget ({ question, questionIndex, totalQuestion, handleSubmit,
                   <label
                     htmlFor={alternativeId}
                     key={index}
+                    checked={isSelected}
                     data-selected={isSelected}
                     data-status={alternativeStatus}
                   >
                     {alternative}
                     <input
                       type='radio'
-                      onChange={() => setSelectAlternative(index)}
+                      onClick={() => setSelectAlternative(index)}
                       name='alternative' id={alternativeId} value={index}
                     />
                   </label>
@@ -261,9 +262,15 @@ export default function Quiz () {
     const nextQuestion = questionIndex + 1
 
     if (nextQuestion < totalQuestion) {
+      
       setCurrentQuestion(nextQuestion)
     } else {
-      setScreenState(screenStates.RESULT)
+      
+      setScreenState(screenStates.LOADING)
+      
+      setTimeout(function () {
+        setScreenState(screenStates.RESULT)
+      }, 1 * 2000)
     }
   }
   return (
