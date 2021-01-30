@@ -46,15 +46,16 @@ export default function Home () {
             <h2>Quizes da galera</h2>
             <p>Dá uma olhada nesses quizes incríveis que o pessoal da Imersão React fez:</p>
             <Card.ListaQuizesWrap>
-              <li>
-                <a href='https://quiz-pokemon.vercel.app' target='_blank' rel='noreferrer'>Quiz Pokemon</a>
-              </li>
-              <li>
-                <a href='https://quiz-imersao-react.vercel.app/' target='_blank' rel='noreferrer'>Data Science Quiz</a>
-              </li>
-              <li>
-                <a href='https://aluraquiz-base.mpradofilho.vercel.app/' target='_blank' rel='noreferrer'>Quiz - Viajando pelo mundo!</a>
-              </li>
+              {db.external.map((link, index) => {
+                const [projeto, user] = new URL(link).host.split('.')
+                return (
+                  <li
+                    key={index}
+                  >
+                    <a href={`/quiz/${projeto}___${user}`} target='_blank' rel='noreferrer'>{`${projeto}/${user}`}</a>
+                  </li>
+                )
+              })}
             </Card.ListaQuizesWrap>
           </Card.Content>
         </Card>

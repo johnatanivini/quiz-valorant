@@ -2,15 +2,14 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
-import Card from '../components/Card/Card'
-import QuizBackground from '../components/QuizComponents/QuizBackground'
-import QuizLogo from '../components/QuizLogo/QuizLogo'
-import ChevronLeft from '../svgs/chevron-left.svg'
-import db from './../db.json'
-import QuizContainer from '../components/QuizContainer/QuizContainer'
-import Button from '../components/Button/Button'
-import CorrectImage from '../components/ResultQuestion/QuestionCorrect'
-import IncorrectImage from '../components/ResultQuestion/QuestionIncorrect'
+import Card from '../../Card/Card'
+import QuestionIncorrect from '../../ResultQuestion/QuestionIncorrect'
+import QuestionCorrect from '../../ResultQuestion/QuestionCorrect'
+import ChevronLeft from './../../../svgs/chevron-left.svg'
+import Button from '../../Button/Button'
+import QuizBackground from '../../QuizComponents/QuizBackground'
+import QuizContainer from '../../QuizContainer/QuizContainer'
+import QuizLogo from '../../QuizLogo/QuizLogo'
 
 const QuestionsWrap = styled.div`
   display:flex;
@@ -25,7 +24,7 @@ const QuestionsWrap = styled.div`
   }
 `
 
-function Resultado ({ results }) {
+function Resultado ({ results, externalTheme, externalQuestion }) {
   const router = useRouter()
   const nome = router.query.nome
   return (
@@ -41,7 +40,7 @@ function Resultado ({ results }) {
 
           <span
             style={{
-              color: db.theme.colors.primary
+              color: externalTheme.colors.primary
             }}
           >
 
@@ -52,13 +51,13 @@ function Resultado ({ results }) {
         <div style={{ display: 'flex', flexFlow: 'row wrap', justifyContent: 'center', alignItems: 'center', marginTop: '10px' }}>
           {results.map((result, index) => {
             const questaoIndex = index + 1
-            const questao = db.questions[index]
+            const questao = externalQuestion[index]
             const alternativa = questao ? questao.alternatives[questao.answer] : []
             return (
               <div
                 key={index}
                 style={{
-                  color: db.theme.colors.contrastText,
+                  color: externalTheme.colors.contrastText,
                   alignSelf: 'baseline',
                   background: '#00000070',
                   padding: '10px',
@@ -78,27 +77,26 @@ function Resultado ({ results }) {
                   padding: '10px',
                   flexBasis: '50px',
                   marginRight: '20px'
-                 
                 }}
                 >{`#${questaoIndex}`}
                 </span>
                 <span>
-                  {`Resposta Correta:`}
-                  <br/>
-                  <span style={{color:db.theme.colors.primary}}>{alternativa}</span>
+                  Resposta Correta:
+                  <br />
+                  <span style={{ color: externalTheme.colors.primary }}>{alternativa}</span>
                 </span>
-                {result === true ? <CorrectImage /> : <IncorrectImage />}
+                {result === true ? <QuestionCorrect /> : <QuestionIncorrect />}
               </div>
             )
           })}
         </div>
         <button style={{
-          background: db.theme.colors.primary,
-          color: db.theme.colors.contrastText,
+          background: externalTheme.colors.primary,
+          color: externalTheme.colors.contrastText,
           padding: '10px',
           width: '100%',
           border: 'none',
-          borderRadius: db.theme.borderRadius,
+          borderRadius: externalTheme.borderRadius,
           margin: '25px 0 10px 0'
         }}
         >
@@ -107,7 +105,7 @@ function Resultado ({ results }) {
       </Card.Content>
       <a
         href='/'
-        style={{ color: db.theme.colors.secondary, margin: '10px 0', display: 'block', textAlign: 'center', textDecoration: 'none' }}
+        style={{ color: externalTheme.colors.secondary, margin: '10px 0', display: 'block', textAlign: 'center', textDecoration: 'none' }}
       >
         Voltar para a Home
       </a>
@@ -115,7 +113,7 @@ function Resultado ({ results }) {
   )
 }
 
-function LoadingQuiz () {
+function LoadingQuiz ({ externalTheme }) {
   return (
     <Card>
       <Card.Header>
@@ -220,8 +218,8 @@ function QuestionWidget ({ question, questionIndex, totalQuestion, handleSubmit,
               })}
             </Card.ListaQuizesWrap>
             {!isQuestionSubmited && <Button text='CONFIRMAR' disabled={!hasAlternativeSelected} />}
-            {isQuestionSubmited && isCorrect && <CorrectImage />}
-            {isQuestionSubmited && !isCorrect && <IncorrectImage />}
+            {isQuestionSubmited && isCorrect && <QuestionCorrect />}
+            {isQuestionSubmited && !isCorrect && <QuestionIncorrect />}
           </form>
         </QuestionsWrap>
       </Card.Content>
@@ -235,15 +233,15 @@ const screenStates = {
   RESULT: 'RESRESULT'
 }
 
-export default function Quiz () {
+export default function Quiz ({ externalQuestion, externalBg, externalTheme }) {
   const [screenState, setScreenState] = React.useState(screenStates.LOADING)
   const [currentQuestion, setCurrentQuestion] = React.useState(0)
   const [results, setResults] = React.useState([])
 
-  const totalQuestion = db.questions.length
+  const totalQuestion = externalQuestion.length
 
   const questionIndex = currentQuestion
-  const question = db.questions[questionIndex]
+  const question = externalQuestion[questionIndex]
 
   function addResult (result) {
     setResults([
@@ -260,21 +258,17 @@ export default function Quiz () {
   }, [])
   function handleSubmit () {
     const nextQuestion = questionIndex + 1
-
     if (nextQuestion < totalQuestion) {
-      
       setCurrentQuestion(nextQuestion)
     } else {
-      
       setScreenState(screenStates.LOADING)
-      
       setTimeout(function () {
         setScreenState(screenStates.RESULT)
       }, 1 * 2000)
     }
   }
   return (
-    <QuizBackground backgroundImage={db.bg}>
+    <QuizBackground backgroundImage={externalBg}>
       <QuizContainer>
         <QuizLogo />
 
@@ -288,10 +282,10 @@ export default function Quiz () {
           />
         )}
 
-        {screenState === screenStates.LOADING && <LoadingQuiz />}
+        {screenState === screenStates.LOADING && <LoadingQuiz externalTheme={externalTheme} />}
 
         {screenState === screenStates.RESULT && (
-          <Resultado results={results} />
+          <Resultado results={results} externalQuestion={externalQuestion} externalTheme={externalTheme} />
         )}
 
       </QuizContainer>

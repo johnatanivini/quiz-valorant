@@ -1,17 +1,18 @@
-import db from "./../../db.json";
+import db from "./../../db.json"
 
-export default function ( request, response){
-
-    if (request.method === "OPTIONS") {
+export default function (request, response) {
+    if ( request.method === "OPTIONS") {
         response.status(200).end()
         return
-    }
+  }
 
   response.setHeader("Access-Control-Credentials", true)
   response.setHeader("Access-Allow-Origin", "*")
-  response.setHeader("Access-Allow-Methods","GET,OPTIONS,POST,DELETE,PUT,PATH")
+  response.setHeader(
+    "Access-Allow-Methods",
+    "GET,OPTIONS,POST,DELETE,PUT,PATH"
+  );
   response.setHeader("Access-Control-Credentials", true)
 
-  return response.json(db)
-
+  return response.json(db);
 }

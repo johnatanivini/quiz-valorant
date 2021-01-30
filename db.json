@@ -125,7 +125,11 @@
     }
   ],
   "external": [
-    ""
+    "https://aluraquiz-tech.pablooks.vercel.app ",
+    "https://theoffice-aluraquiz.joaovitordmoraes.vercel.app",
+    "https://quiz-justiceleague.levi-magny.vercel.app",
+    "https://quiz-games.gabrielwolf-dev.vercel.app",
+    "https://animequiz.ffsf-filho.vercel.app"
   ],
   "theme": {
     "colors": {
