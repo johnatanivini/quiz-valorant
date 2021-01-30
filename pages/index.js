@@ -9,6 +9,8 @@ import GitHubCorner from '../components/GitHubCorner/GitHubCorner'
 import Input from '../components/Input/Input'
 import Button from '../components/Button/Button'
 import QuizContainer from '../components/QuizContainer/QuizContainer'
+import { Link } from '../components/Link'
+import { motion } from 'framer-motion'
 
 export default function Home () {
   const router = useRouter()
@@ -17,8 +19,30 @@ export default function Home () {
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
-        <QuizLogo />
-        <Card>
+        <QuizLogo
+          externalLogo={db.logo}
+          as={motion.div}
+          initial={{ y: '-100px', opacity: '0' }}
+          animate={{ y: '0', opacity: '1' }}
+          transition={{
+            type: 'spring',
+            stiffness: 260,
+            damping: 20,
+            duration: 0
+          }}
+        />
+        <Card
+          as={motion.div}
+          initial={{ x: '-100px', opacity: '0' }}
+          animate={{ x: '0', opacity: '1' }}
+          transition={{
+            type: 'spring',
+            stiffness: 260,
+            damping: 20,
+            duration: 1
+          }}
+
+        >
           <Card.Header>
             <h1>{db.title}</h1>
           </Card.Header>
@@ -27,7 +51,7 @@ export default function Home () {
 
             <form onSubmit={(evento) => {
               evento.preventDefault()
-              router.push(`/quiz?nome=${name}`)
+              router.push(`/quiz?id=${name}`)
             }}
             >
               <Input
@@ -41,7 +65,17 @@ export default function Home () {
           </Card.Content>
         </Card>
 
-        <Card>
+        <Card
+          as={motion.div}
+          initial={{ x: '100px', opacity: '0' }}
+          animate={{ x: '0', opacity: '1' }}
+          transition={{
+            type: 'spring',
+            stiffness: 260,
+            damping: 20,
+            duration: 1.5
+          }}
+        >
           <Card.Content>
             <h2>Quizes da galera</h2>
             <p>Dá uma olhada nesses quizes incríveis que o pessoal da Imersão React fez:</p>
@@ -52,7 +86,11 @@ export default function Home () {
                   <li
                     key={index}
                   >
-                    <a href={`/quiz/${projeto}___${user}`} target='_blank' rel='noreferrer'>{`${projeto}/${user}`}</a>
+                    <Link
+                      href={name.length !== 0 ? `/quiz/${projeto}___${user}` : ''}
+                    >
+                      <a>{`${projeto}/${user}`}</a>
+                    </Link>
                   </li>
                 )
               })}
@@ -60,9 +98,21 @@ export default function Home () {
           </Card.Content>
         </Card>
 
-        <Footer />
+        <Footer
+          as={motion.div}
+          initial={{ y: '150px', opacity: '0' }}
+          animate={{ y: '0', opacity: '1' }}
+          transition={{
+            type: 'spring',
+            stiffness: 260,
+            damping: 25,
+            duration: 2
+          }}
+        />
       </QuizContainer>
-      <GitHubCorner projectUrl='https://github.com/johnatanivini/quiz-valorant' />
+      <GitHubCorner
+        projectUrl='https://github.com/johnatanivini/quiz-valorant'
+      />
     </QuizBackground>
   )
 }

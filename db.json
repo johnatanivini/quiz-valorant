@@ -129,12 +129,13 @@
     "https://theoffice-aluraquiz.joaovitordmoraes.vercel.app",
     "https://quiz-justiceleague.levi-magny.vercel.app",
     "https://quiz-games.gabrielwolf-dev.vercel.app",
-    "https://animequiz.ffsf-filho.vercel.app"
+    "https://animequiz.ffsf-filho.vercel.app",
+    "https://minequiz.lukeflame.vercel.app"
   ],
   "theme": {
     "colors": {
       "primary": "#e908f8",
-      "secondary": "#b78460",
+      "secondary": "#92a8e6",
       "terciary":"#dc3d4b",
       "mainBg": "#364966",
       "contrastText": "#FFFFFF",

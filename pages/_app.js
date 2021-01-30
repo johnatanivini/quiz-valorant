@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     display:flex;
     flex-direction:column;
     font-family:'Lato',sans-serif;
-    colors:${({ theme }) => theme.colors.contrastText};
+    color:${({ theme }) => theme.colors.contrastText};
   }
   html,body {
     height: 100vh;

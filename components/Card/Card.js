@@ -8,7 +8,9 @@ const Card = styled.div`
     overflow:hidden;
     border-radius:5px;
 
-    h1,h2,h3 {
+    h1,
+    h2,
+    h3 {
         font-size:18px;
         font-weigth:700;
         line-height:1;
@@ -20,7 +22,7 @@ const Card = styled.div`
         font-size:14px;
         font-weight:400;
         line-heigth:1;
-        color: ${({ theme }) => theme.colors.secondary}
+        color: ${({ theme }) => theme.colors.contrastText}
     }
 
 `
@@ -80,7 +82,7 @@ Card.ListaQuizesWrap = styled.ul`
           }
 
         &:hover{
-            background-color:${({ theme }) => theme.colors.terciary};
+            background-color:${({ theme }) => theme.colors.secondary};
         }
 
         &:focus,

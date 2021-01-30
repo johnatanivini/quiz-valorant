@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
-import db from '../../db.json'
+import { Link } from '../Link'
 
 const QuizLogoWrapper = styled.div`
   img {
@@ -15,18 +15,15 @@ const QuizLogoWrapper = styled.div`
   }
 `
 
-export default function QuizLogo (props) {
-  const router = useRouter()
-
-  const toHome = (e) => {
-    e.preventDefault()
-    router.push('/')
-  }
+export default function QuizLogo ({ externalLogo, ...props }) {
+  console.log(externalLogo)
   return (
     <QuizLogoWrapper {...props}>
-      <a onClick={toHome}>
-        <img src={db.logo} height='50' />
-      </a>
+      <Link href='/'>
+        <a>
+          <img src={externalLogo} height='50' />
+        </a>
+      </Link>
     </QuizLogoWrapper>
   )
 }

@@ -1,9 +1,12 @@
 import React from 'react'
+import { ThemeProvider } from 'styled-components';
 import Quiz from '../../components/screens/Quiz/Quiz'
-
+import AluraLogo from '../../svgs/AluraLogo.svg'
 export default function QuizDaGalera({dbExterno}){
     return (
-        <Quiz externalQuestion={dbExterno.questions} externalBg={dbExterno.bg} externalTheme={dbExterno.theme} />
+        <ThemeProvider theme={dbExterno.theme}>
+            <Quiz externalQuestion={dbExterno.questions} externalBg={dbExterno.bg} externalLogo={AluraLogo} />
+        </ThemeProvider>
     )
 }
 
@@ -23,11 +26,10 @@ export async function getServerSideProps(context){
         //   // console.error(err);
         // });
   
-      console.log('dbExterno', dbExterno)
       // console.log('Infos que o Next da para nós', context.query.id);
       return {
         props: {
-          dbExterno,
+          dbExterno
         },
       };
     } catch(err) {

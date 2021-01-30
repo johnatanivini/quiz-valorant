@@ -8,11 +8,11 @@ const ButtonBase = styled.button`
     border:none;
     color:${({ theme }) => theme.colors.contrastText};
     margin-top:10px;
-    background:${({ theme }) => theme.colors.terciary};
+    background:${({ theme }) => theme.colors.terciary ?? theme.colors.primary};
     transition:all linear .5s;
 
     &:disabled {
-        background-color: ${({ theme }) => theme.colors.buttonDisabled}
+        background-color: ${({ theme }) => theme.colors.buttonDisabled ?? theme.colors.secondary}
     }
 
 `
