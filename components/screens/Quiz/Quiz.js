@@ -242,7 +242,7 @@ function QuestionWidget ({ question, questionIndex, totalQuestion, handleSubmit,
                     key={index}
                     checked={isSelected}
                     data-selected={isSelected}
-                    data-status={alternativeStatus}
+                    data-status={isQuestionSubmited && alternativeStatus}
                   >
                     {alternative}
                     <input
