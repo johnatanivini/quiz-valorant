@@ -4,25 +4,15 @@ import { DefaultSeo } from 'next-seo'
 import db from './../db.json'
 
 const GlobalStyle = createGlobalStyle`
-
-  @font-face {
-                    font-family: 'Noto Sans TC';
-                    src: url('/fonts/NotoSansTC-Regular.otf');
-                    font-weight: bold;
-                    font-style: normal;
-                    font-display: swap;
-  }
-
   body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     display:flex;
     flex-direction:column;
-    font-family:'Noto Sans TC',sans-serif;
+    font-family:'Lato',sans-serif;
     color:${({ theme }) => theme.colors.contrastText};
   }
-
   html,body {
     height: 100vh;
   }
@@ -40,6 +30,8 @@ export default function App ({ Component, pageProps }) {
       <Head>
         <title>Alura Quiz | Valorant </title>
         <link rel='shortcut icon' href='/favicon.png' />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link as="font" crossOrigin="" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&display=swap" rel="preload" />
       </Head>
       <DefaultSeo
         openGraph={{
@@ -60,7 +52,6 @@ export default function App ({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Component {...pageProps} />
-         
       </ThemeProvider>
     </>
   )
