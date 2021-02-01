@@ -2,10 +2,16 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components';
 import Quiz from '../../components/screens/Quiz/Quiz'
 import AluraLogo from '../../svgs/AluraLogo.svg'
+import { useRouter } from 'next/router'
+
 export default function QuizDaGalera({dbExterno}){
+
+    const router = useRouter()
+    const nomeQuiz = router.query.id 
+
     return (
         <ThemeProvider theme={dbExterno.theme}>
-            <Quiz externalQuestion={dbExterno.questions} externalBg={dbExterno.bg} externalLogo={AluraLogo} />
+            <Quiz externalQuestion={dbExterno.questions} externalBg={dbExterno.bg} externalLogo={AluraLogo} nomeQuiz={nomeQuiz} />
         </ThemeProvider>
     )
 }

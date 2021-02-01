@@ -19,11 +19,7 @@ export default function QuizLogo ({ externalLogo, ...props }) {
   console.log(externalLogo)
   return (
     <QuizLogoWrapper {...props}>
-      <Link href='/'>
-        <a>
           <img src={externalLogo} height='50' />
-        </a>
-      </Link>
     </QuizLogoWrapper>
   )
 }

@@ -87,9 +87,9 @@ export default function Home () {
                     key={index}
                   >
                     <Link
-                      href={name.length !== 0 ? `/quiz/${projeto}___${user}` : ''}
+                      href={name.length !== 0 ? `/quiz/${projeto}___${user}` : '/'}
                     >
-                      <a>{`${projeto}/${user}`}</a>
+                      {`${projeto}/${user}`}
                     </Link>
                   </li>
                 )

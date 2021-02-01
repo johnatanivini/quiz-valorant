@@ -8,6 +8,7 @@
     "eslint:init": "eslint --init"
   },
   "dependencies": {
+    "firebase": "^8.2.5",
     "framer-motion": "^3.2.2-rc.1",
     "next": "latest",
     "next-images": "^1.7.0",
@@ -20,6 +21,8 @@
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.8.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^8.2.0",
     "eslint": "^7.18.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
