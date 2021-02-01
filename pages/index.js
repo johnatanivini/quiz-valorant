@@ -51,7 +51,7 @@ export default function Home () {
 
             <form onSubmit={(evento) => {
               evento.preventDefault()
-              router.push(`/quiz?id=${name}`)
+              router.push(`/quiz?nome=${name}&id=Valorant`)
             }}
             >
               <Input
@@ -79,15 +79,16 @@ export default function Home () {
           <Card.Content>
             <h2>Quizes da galera</h2>
             <p>Dá uma olhada nesses quizes incríveis que o pessoal da Imersão React fez:</p>
-            <Card.ListaQuizesWrap>
+            <Card.ListaQuizesWrap hidden={name.length > 0}>
               {db.external.map((link, index) => {
                 const [projeto, user] = new URL(link).host.split('.')
+                console.log(projeto)
                 return (
                   <li
                     key={index}
                   >
                     <Link
-                      href={name.length !== 0 ? `/quiz/${projeto}___${user}` : '/'}
+                      href={name.length !== 0 ? `/quiz/${projeto}___${user}&nome=${name}` : '/'}
                     >
                       {`${projeto}/${user}`}
                     </Link>

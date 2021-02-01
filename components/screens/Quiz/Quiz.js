@@ -28,10 +28,8 @@ const QuestionsWrap = styled.div`
   }
 `
 
-function Resultado ({ results, externalQuestion }) {
-  const router = useRouter()
-  const nome = router.query.id.split('___')
-  const id = nome[nome.length - 1]
+function Resultado ({ results, nomeQuiz, externalQuestion }) {
+
 
   return (
     <Card
@@ -59,7 +57,7 @@ function Resultado ({ results, externalQuestion }) {
               color: ({ theme }) => theme.colors.secondary
             }}
           >
-            {` ${id}`}
+            {` ${nomeQuiz}`}
           </span>
         </p>
         <p> {`você acertou ${results.filter((result) => result === true).reduce((a, b) => a + b, 0)} de ${results.length} questões`}</p>
@@ -72,7 +70,7 @@ function Resultado ({ results, externalQuestion }) {
               <div
                 key={index}
                 style={{
-                  color: ({ theme }) => theme.colors.contrastText + '!important',
+                  color: ({ theme }) => theme.colors.contrastText,
                   alignSelf: 'baseline',
                   background: '#00000070',
                   padding: '10px',
@@ -278,17 +276,15 @@ const FlexRow = styled.div`
   justify-content: space-around;
 `
 
-export default function Quiz ({ externalQuestion, externalBg, externalLogo, nomeQuiz }) {
-  const [screenState, setScreenState] = React.useState(screenStates.LOADING)
-  const [currentQuestion, setCurrentQuestion] = React.useState(0)
-  const [results, setResults] = React.useState([])
-  const router = useRouter()
-  const nome = router.query.id.split('___')
-  const id = nome[nome.length - 1]
+export default function Quiz ({ externalQuestion, externalBg, externalLogo, nomeQuiz, idQuiz}) {
+  const [screenState, setScreenState] = useState(screenStates.LOADING)
+  const [currentQuestion, setCurrentQuestion] = useState(0)
+  const [results, setResults] = useState([])
 
   const totalQuestion = externalQuestion.length
   const questionIndex = currentQuestion
   const question = externalQuestion[questionIndex]
+
 
   function addResult (result) {
     setResults([
@@ -321,9 +317,9 @@ export default function Quiz ({ externalQuestion, externalBg, externalLogo, nome
         const total = results.length
 
         fire.firestore()
-        .collection(nomeQuiz)
+        .collection(idQuiz)
         .add({
-          'user':id,
+          'user':nomeQuiz,
           'acertos': acertos,
           'total': total
         })
@@ -352,12 +348,12 @@ export default function Quiz ({ externalQuestion, externalBg, externalLogo, nome
         {screenState === screenStates.LOADING && <LoadingQuiz />}
 
         {screenState === screenStates.RESULT && (
-          <Resultado results={results} externalQuestion={externalQuestion} />
+          <Resultado results={results} nomeQuiz={nomeQuiz} externalQuestion={externalQuestion} />
         )}
 
       </QuizContainer>
 
-       <Pontuacoes nomeQuiz={nomeQuiz} />
+       <Pontuacoes idQuiz={idQuiz} />
 
 
        </FlexRow>
@@ -368,7 +364,7 @@ export default function Quiz ({ externalQuestion, externalBg, externalLogo, nome
 }
 
 
-function RankPrata(){
+function RankSilver(){
   return (
     <img src="/silver-3.png"  height="50"  />
   )
@@ -398,7 +394,7 @@ function RankRadiante(){
   )
 }
 
-function Pontuacoes({nomeQuiz}){
+function Pontuacoes({idQuiz}){
 
   const [pontos, setPontos] = useState([])
 
@@ -411,7 +407,7 @@ function Pontuacoes({nomeQuiz}){
 
       let isSubscribed = true;
 
-      const quizePontos = fire.firestore().collection(nomeQuiz)
+      const quizePontos = fire.firestore().collection(idQuiz)
       const orders = quizePontos.orderBy('acertos','desc')
 
       orders.onSnapshot(snap => {
@@ -473,7 +469,8 @@ function Pontuacoes({nomeQuiz}){
                   }}
                 >
                         <span style={{
-                          color: ({theme}) => theme.colors.primary + '!important'
+                          color: ({theme}) => theme.colors.primary + '!important',
+                          flexBasis: '20%'
                         }}
                         >
                         {ponto.user}
