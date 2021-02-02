@@ -29,9 +29,11 @@ export default function App ({ Component, pageProps }) {
     <>
       <Head>
         <title>Alura Quiz | Valorant </title>
+        <meta name='author' content='Johnatan Ívini' />
+        <meta name='description' content='Aplicação de Quizes, desenvolvida durante a imersão Alura, com React, Next.Js' />
         <link rel='shortcut icon' href='/favicon.png' />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link as="font" crossOrigin="" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&display=swap" rel="preload" />
+        <link rel='preconnect' href='https://fonts.gstatic.com' />
+        <link as='font' crossOrigin='' href='https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&display=swap' rel='preload' />
       </Head>
       <DefaultSeo
         openGraph={{
