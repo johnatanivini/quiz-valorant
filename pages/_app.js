@@ -33,7 +33,7 @@ export default function App ({ Component, pageProps }) {
         <meta name='description' content='Aplicação de Quizes, desenvolvida durante a imersão Alura, com React, Next.Js' />
         <link rel='shortcut icon' href='/favicon.png' />
         <link rel='preconnect' href='https://fonts.gstatic.com' />
-        <link as='font' href='https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&amp;display=swap' rel='stylesheet' />
+        <link as='font' crossorigin='anonymous' href='https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&amp;display=swap' rel='preload' />
       </Head>
       <DefaultSeo
         openGraph={{
